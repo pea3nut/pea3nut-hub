@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  blog:
+    container_name: pea3nut-blog
+    build:
+      context: ./blog
+      dockerfile: Dockerfile
+      args:
+        db_name: "pea"
+        root_url: "http://127.0.0.1:8081"
+    ports:
+      - "8081:80"
+    volumes:
+      - ./blog/mysql-data:/var/lib/mysql
+      - ./blog/wordpress:/app
+  info:
+    container_name: pea3nut-info
+    image: pea3nut/pea3nut-info:latest
+    ports:
+      - "8082:80"
+
