@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "
+	use pea;
+	update blog_options set option_value = '$1' where option_name = 'siteurl' or option_name = 'home';
+" | mysql
+
+echo "
+    use pea;
+    select * from blog_options where option_name = 'siteurl' or option_name = 'home';
+" | mysql
