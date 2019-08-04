@@ -1,21 +1,34 @@
 version: "3.7"
 services:
-  blog:
-    container_name: pea3nut-blog
-    build:
-      context: ./blog
-      dockerfile: Dockerfile
-      args:
-        db_name: "pea"
-        root_url: "http://127.0.0.1:8081"
-    ports:
-      - "8081:80"
-    volumes:
-      - ./blog/mysql-data:/var/lib/mysql
-      - ./blog/wordpress:/app
-  info:
-    container_name: pea3nut-info
-    image: pea3nut/pea3nut-info:latest
-    ports:
-      - "8082:80"
+    blog:
+        container_name: pea3nut-blog
+        build:
+            context: ./blog
+            dockerfile: Dockerfile
+            args:
+                db_name: "pea"
+                root_url: "http://127.0.0.1:8081"
+        ports:
+            - "8081:80"
+        volumes:
+            - ./blog/mysql-data:/var/lib/mysql
+            - ./blog/wordpress:/app
+    info:
+        container_name: pea3nut-info
+        image: pea3nut/pea3nut-info:latest
+        ports:
+            - "8082:80"
+    short-night:
+        container_name: short-night-homepage
+        image: pea3nut/short-night-homepage:latest
+        ports:
+            - "8083:80"
+    aoning:
+        container_name: aoning-wang
+        build:
+            context: ./aoning-wang
+            dockerfile: Dockerfile
+        ports:
+            - "8085:80"
+
 
