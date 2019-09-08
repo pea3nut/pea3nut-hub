@@ -36,7 +36,7 @@ services:
         restart: on-failure
     pxer:
         container_name: pxer-server
-        image: pxer:test
+        image: pea3nut/pxer:latest
         ports:
             - "8086:80"
         volumes:
