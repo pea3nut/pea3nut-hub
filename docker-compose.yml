@@ -43,3 +43,9 @@ services:
             - ./pxer/logs:/pxer/server/logs
             - ./blog/wordpress:/app
         restart: on-failure
+    pxer-homepage:
+        container_name: pxer-homepage
+        image: pea3nut/pxer-homepage:latest
+        ports:
+            - "8087:80"
+        restart: on-failure
