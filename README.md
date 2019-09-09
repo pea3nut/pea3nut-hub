@@ -35,6 +35,7 @@ docker exec pea3nut-blog /set-url "http://blog.pea3nut.com"
 ```
 
 修改域名解析，包含：
+- pea3nut.blog
 - blog.pea3nut.org
 - short-night.pea3nut.org
 - pxer.pea3nut.org
