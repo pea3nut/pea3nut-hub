@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 root_path="$(pwd)"
 
 
@@ -16,6 +19,7 @@ apt-get install -y nginx
 # others
 
 ln -s "${root_path}/vhost.conf" /etc/nginx/conf.d/vhost.conf
+systemctl restart nginx
 
 
 # start when power on
@@ -27,7 +31,7 @@ if [ ! -f '/etc/systemd/system/rc-local.service' ];then
     echo 'Alias=rc-local.service' >> /etc/systemd/system/rc-local.service
 fi
 
-if [ ! -f '/etc/rc.local'];then
+if [ ! -f '/etc/rc.local' ];then
     echo '#!/bin/bash' > /etc/rc.local
     chmod +x /etc/rc.local
 fi
