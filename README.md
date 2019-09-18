@@ -50,7 +50,7 @@ tar -xzvf xxx.tar.gz
 **确保服务都启动好后**，设置博客的根URL：
 
 ```bash
-docker exec pea3nut-blog /set-url "http://blog.pea3nut.com"
+docker exec pea3nut-blog /set-url "http://pea3nut.blog"
 ```
 
 ### 修改解析
