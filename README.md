@@ -45,7 +45,7 @@ tar -xzvf xxx.tar.gz
 ### 启动
 
 
-执行`/usr/local/bin/docker-compose`中的最后一行，来启动整个服务
+执行`/etc/rc.local`中（开机启动脚本）的最后一行，来启动整个服务
 
 **确保服务都启动好后**，设置博客的根URL：
 
