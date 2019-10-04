@@ -49,3 +49,9 @@ services:
         ports:
             - "8087:80"
         restart: on-failure
+    pxer-homepage-2:
+        container_name: pxer-homepage-2
+        image: pea3nut/pxer-homepage-2:latest
+        ports:
+            - "8088:80"
+        restart: on-failure

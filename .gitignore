@@ -2,3 +2,4 @@ blog/mysql-data
 blog/wordpress
 pxer/logs/*
 pxer/ssl/*
+*.tar.gz
