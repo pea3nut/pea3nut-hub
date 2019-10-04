@@ -4,7 +4,8 @@
 
 部分站点编译结果：
 
-- [Pxer 官网](http://pxer.pea3nut.org/)：[<img src="https://api.travis-ci.org/pea3nut/pxer-homepage.svg?branch=master" />](https://github.com/pea3nut/pxer-homepage)
+- [Pxer 官网 v1](http://v1.pxer.pea3nut.org/)：[<img src="https://api.travis-ci.org/pea3nut/pxer-homepage.svg?branch=master" />](https://github.com/pea3nut/pxer-homepage)
+- [Pxer 官网 v2](http://pxer.pea3nut.org/)：[<img src="https://www.travis-ci.org/pea3nut/pxer-homepage-2.svg?branch=master" />](https://github.com/pea3nut/pxer-homepage)
 - [Pxer App](https://pxer-app.pea3nut.org/)：[<img src="https://www.travis-ci.org/FoXZilla/Pxer.svg?branch=dev" />](https://github.com/FoXZilla/Pxer)
 - [Short Night 官网](http://short-night.pea3nut.org/)：[<img src="https://api.travis-ci.org/FoXZilla/short-night-homepage.svg?branch=master" />](https://github.com/FoXZilla/short-night-homepage)
 - [花生PeAの个人资料](http://pea3nut.info/)：[<img src="https://api.travis-ci.org/pea3nut/pea3nut-info.svg?branch=master" />](https://github.com/pea3nut/pea3nut-info)
@@ -59,6 +60,7 @@ docker exec pea3nut-blog /set-url "http://pea3nut.blog"
 - pea3nut.blog
 - blog.pea3nut.org
 - short-night.pea3nut.org
+- v1.pxer.pea3nut.org
 - pxer.pea3nut.org
 - pxer-app.pea3nut.org
 - pea3nut.info
