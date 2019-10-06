@@ -55,3 +55,12 @@ services:
         ports:
             - "8088:80"
         restart: on-failure
+    point-hub:
+        container_name: point-hub
+        image: pea3nut/point-hub:master
+        ports:
+            - "8089:3000"
+            - "8090:80"
+        volumes:
+            - ./points-data:/var/lib/mysql
+        restart: on-failure
