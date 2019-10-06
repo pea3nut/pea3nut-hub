@@ -9,6 +9,7 @@
 - [Pxer App](https://pxer-app.pea3nut.org/)：[<img src="https://www.travis-ci.org/FoXZilla/Pxer.svg?branch=dev" />](https://github.com/FoXZilla/Pxer)
 - [Short Night 官网](http://short-night.pea3nut.org/)：[<img src="https://api.travis-ci.org/FoXZilla/short-night-homepage.svg?branch=master" />](https://github.com/FoXZilla/short-night-homepage)
 - [花生PeAの个人资料](http://pea3nut.info/)：[<img src="https://api.travis-ci.org/pea3nut/pea3nut-info.svg?branch=master" />](https://github.com/pea3nut/pea3nut-info)
+- [打点平台](http://point.pea3nut.org/)：[<img src="https://api.travis-ci.org/pea3nut/point-hub.svg?branch=master" />](https://github.com/pea3nut/point-hub)
 
 ## 首次部署
 
@@ -29,6 +30,7 @@
 - 博客源码：`blog/mysql-data/*`
 - 博客源码：`blog/wordpress/*`
 - Pxer服务器SSL证书：`pxer/ssl/pxer-app.pea3nut.org.pem`、`pxer/ssl/pxer-app.pea3nut.org.key`
+- 打点数据：`points-data/`
 
 你可以通过打包上个服务器中的内容，使用：
 
@@ -65,5 +67,6 @@ docker exec pea3nut-blog /set-url "http://pea3nut.blog"
 - pxer-app.pea3nut.org
 - pea3nut.info
 - aoning.wang
+- point.pea3nut.org
 
 别忘了一一测试哦~
