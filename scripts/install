@@ -12,15 +12,17 @@ sh install-docker.sh
 curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-apt update
+apt-get update
 apt-get install -y nginx
-
+apt-get install -y software-properties-common
+add-apt-repository universe
+add-apt-repository -y ppa:certbot/certbot
+apt-get update
+apt-get install -y certbot python-certbot-nginx
 
 # others
 
 ln -s "${root_path}/vhost.conf" /etc/nginx/conf.d/vhost.conf
-systemctl restart nginx
-
 
 # start when power on
 
@@ -44,3 +46,5 @@ up \
 2>${root_path}/docker.stderr.log \
 & \
 " >> /etc/rc.local
+
+echo "Install finished. Then using `./script/package` and `./script/unpack` to migrate data."

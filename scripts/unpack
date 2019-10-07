@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir -p temp/
+mv $1 temp/
+
+cd temp/
+
+tar -xzvf $1
+cp -r etc/letsencrypt/* /etc/letsencrypt/
+
+systemctl restart nginx
