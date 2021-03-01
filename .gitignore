@@ -2,4 +2,6 @@ blog/mysql-data
 blog/wordpress
 pxer/logs/*
 pxer/ssl/*
+points-data/
+test/
 *.tar.gz
