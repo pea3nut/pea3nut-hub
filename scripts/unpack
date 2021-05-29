@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 mkdir -p temp/
 mv $1 temp/
 
