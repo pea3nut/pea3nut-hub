@@ -1,8 +1,15 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
 set -e
 
 docker-compose down
 docker-compose pull
 docker-compose up -d
 systemctl restart nginx
+
+if [ "$1" = "gpt" ]; then
+    $DIR/set-gpt-key
+fi

@@ -61,3 +61,9 @@ services:
         volumes:
             - ./points-data:/var/lib/mysql
         restart: on-failure
+    gpt:
+        container_name: gpt
+        image: pea3nut/chat-gpt:latest
+        ports:
+            - "8091:3000"
+        restart: on-failure

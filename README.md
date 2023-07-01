@@ -31,6 +31,7 @@
 - 博客源码：`blog/wordpress/*`
 - Pxer服务器SSL证书：`pxer/ssl/pxer-app.pea3nut.org.pem`、`pxer/ssl/pxer-app.pea3nut.org.key`
 - 打点数据：`points-data/`
+- 修改：`script/set-gpt-key`
 
 你可以通过打包上个服务器中的内容，使用：
 
@@ -68,5 +69,6 @@ docker exec pea3nut-blog /set-url "http://pea3nut.blog"
 - pea3nut.info
 - aoning.wang
 - point.pea3nut.org
+- gpt.pea3nut.org
 
 别忘了一一测试哦~

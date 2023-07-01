@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# set key here
+open_id_key=4c618d7e-5318-4b06-a7de-4cb9b90f880f
+
+docker exec -it `docker ps -aqf "name=gpt"` /bin/sh -c \
+"sed -i 's/4c618d7e-5318-4b06-a7de-4cb9b90f880f/$open_id_key/g' \
+\`grep -rl 4c618d7e-5318-4b06-a7de-4cb9b90f880f dist/\`"
