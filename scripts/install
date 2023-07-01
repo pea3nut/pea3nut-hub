@@ -24,6 +24,7 @@ apt-get install -y certbot python-certbot-nginx
 # others
 
 ln -s "${root_path}/vhost.conf" /etc/nginx/conf.d/vhost.conf
+cp "${root_path}/gpt/htpasswd.txt" /etc/nginx/conf.d/htpasswd.txt
 
 # start when power on
 

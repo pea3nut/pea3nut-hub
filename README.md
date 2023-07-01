@@ -31,7 +31,7 @@
 - 博客源码：`blog/wordpress/*`
 - Pxer服务器SSL证书：`pxer/ssl/pxer-app.pea3nut.org.pem`、`pxer/ssl/pxer-app.pea3nut.org.key`
 - 打点数据：`points-data/`
-- 修改：`script/set-gpt-key`
+- 复制：`secret.env.example` 到 `secret.env`，修改内容
 
 你可以通过打包上个服务器中的内容，使用：
 

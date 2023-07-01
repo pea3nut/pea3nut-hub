@@ -5,3 +5,4 @@ pxer/ssl/*
 points-data/
 test/
 *.tar.gz
+secret.env
