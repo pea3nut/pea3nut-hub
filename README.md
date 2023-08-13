@@ -57,6 +57,21 @@ tar -xzvf xxx.tar.gz
 docker exec pea3nut-blog /set-url "http://pea3nut.blog"
 ```
 
+### 增加定期备份脚本
+
+运行
+
+```bash
+export VISUAL=vi
+crontab -e
+```
+
+然后增加
+
+```
+0 0 1 * * /root/_pea3nut/pea3nut-hub/scripts/backup
+```
+
 ### 修改解析
 
 修改域名解析，包含：
