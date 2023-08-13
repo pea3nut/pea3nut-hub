@@ -15,7 +15,7 @@ fi
 password=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 username=pea3nut
 filename=pea3nut-hub-patch.tar.gz
-port=8091
+port=8991
 
 npm i -g local-web-server
 

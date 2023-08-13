@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DATE=$(date +"%Y-%m-%d")
+SOURCE_DIR="/root/_pea3nut/pea3nut-hub" # 修改为你要备份的文件夹路径
+BACKUP_DIR="/root/_pea3nut/pea3nut-hub-backup" # 修改为你想存储备份的路径
+
+tar -czvf "$BACKUP_DIR/backup-$DATE.tar.gz" -C "$SOURCE_DIR" .
