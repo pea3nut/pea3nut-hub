@@ -1,15 +1,6 @@
 # pea3nut-hub
 
-花生PeA的全部线上站点！
-
-部分站点编译结果：
-
-- [Pxer 官网 v1](http://v1.pxer.pea3nut.org/)：[<img src="https://api.travis-ci.org/pea3nut/pxer-homepage.svg?branch=master" />](https://github.com/pea3nut/pxer-homepage)
-- [Pxer 官网 v2](http://pxer.pea3nut.org/)：[<img src="https://www.travis-ci.org/pea3nut/pxer-homepage-2.svg?branch=master" />](https://github.com/pea3nut/pxer-homepage)
-- [Pxer App](https://pxer-app.pea3nut.org/)：[<img src="https://www.travis-ci.org/FoXZilla/Pxer.svg?branch=dev" />](https://github.com/FoXZilla/Pxer)
-- [Short Night 官网](http://short-night.pea3nut.org/)：[<img src="https://api.travis-ci.org/FoXZilla/short-night-homepage.svg?branch=master" />](https://github.com/FoXZilla/short-night-homepage)
-- [花生PeAの个人资料](http://pea3nut.info/)：[<img src="https://api.travis-ci.org/pea3nut/pea3nut-info.svg?branch=master" />](https://github.com/pea3nut/pea3nut-info)
-- [打点平台](http://point.pea3nut.org/)：[<img src="https://api.travis-ci.org/pea3nut/point-hub.svg?branch=master" />](https://github.com/pea3nut/point-hub)
+花生Peadar的全部线上站点！
 
 ## 首次部署
 
@@ -84,6 +75,6 @@ crontab -e
 - pea3nut.info
 - aoning.wang
 - point.pea3nut.org
-- gpt.pea3nut.org
+- momo.nutjs.com
 
 别忘了一一测试哦~
