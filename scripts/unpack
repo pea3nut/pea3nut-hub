@@ -8,6 +8,9 @@ mv $1 temp/
 cd temp/
 
 tar -xzvf $1
-cp -r etc/letsencrypt/* /etc/letsencrypt/
+cp -r etc/letsencrypt /etc/letsencrypt
 
 systemctl restart nginx
+
+cd ../
+rm -rf temp/
