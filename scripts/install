@@ -16,10 +16,11 @@ chmod +x /usr/local/bin/docker-compose
 apt-get update
 apt-get install -y nginx
 apt-get install -y software-properties-common
-add-apt-repository universe
-add-apt-repository -y ppa:certbot/certbot
-apt-get update
-apt-get install -y certbot python-certbot-nginx
+apt-get install -y snapd
+snap install core
+snap refresh core
+snap install --classic certbot
+
 
 # others
 
@@ -49,4 +50,4 @@ up \
 & \
 " >> /etc/rc.local
 
-echo "Install finished. Then using `./script/package` and `./script/unpack` to migrate data."
+echo 'Install finished. Then using `./script/package` and `./script/unpack` to migrate data.'
