@@ -1,10 +1,10 @@
 # pea3nut-hub
 
-花生Peadar的全部线上站点！
+花生Peadar 的全部线上站点！
 
 ## 首次部署
 
-确保你在`/root/_pea3nut/pea3nut-hub/`文件夹下
+确保你在`/root/_pea3nut/pea3nut-hub/`文件夹下，使用 Ubuntu 系统
 
 ### 安装依赖
 
@@ -14,38 +14,43 @@
 
 该脚本会自动安装所有依赖并设置开机启动
 
-### 部署私密文件
+### 迁移资源
 
-补充私密文件夹内容，包括：
-
-- 博客源码：`blog/mysql-data/*`
-- 博客源码：`blog/wordpress/*`
-- Pxer服务器SSL证书：`pxer/ssl/pxer-app.pea3nut.org.pem`、`pxer/ssl/pxer-app.pea3nut.org.key`
-- 打点数据：`points-data/`
-- 复制：`secret.env.example` 到 `secret.env`，修改内容
-
-你可以通过打包上个服务器中的内容，使用：
+在旧服务器上使用如下命令打包资源：
 
 ```bash
-./scripts/packing
+./scripts/package
 ```
 
 该命令会输出一个 wget 命令和一个地址，在新服务器上执行可下载：
 
 ```bash
 wget xxx
-tar -xzvf xxx.tar.gz
+./script/unpack yyy # yyy 为下载的 tar 包
 ```
 
 ### 启动
 
-
-执行`/etc/rc.local`中（开机启动脚本）的最后一行，来启动整个服务
-
-**确保服务都启动好后**，设置博客的根URL：
+直接运行下面命令来下载并拉起所有 Docker 容器：
 
 ```bash
-docker exec pea3nut-blog /set-url "http://pea3nut.blog"
+./scripts/refresh-all
+```
+
+### 导入博客资源
+
+确保 `pea3nut-blog` 容器正在运行，运行如下命令导入博客的 MySQL 数据库
+
+```bash
+./scripts/import-blog-data
+```
+
+### 修改解析
+
+修改域名解析，域名太多，建议直接
+
+```bash
+cat vhost.conf | grep server_name
 ```
 
 ### 增加定期备份脚本
@@ -62,19 +67,3 @@ crontab -e
 ```
 0 0 1 * * /root/_pea3nut/pea3nut-hub/scripts/backup
 ```
-
-### 修改解析
-
-修改域名解析，包含：
-- pea3nut.blog
-- blog.pea3nut.org
-- short-night.pea3nut.org
-- v1.pxer.pea3nut.org
-- pxer.pea3nut.org
-- pxer-app.pea3nut.org
-- pea3nut.info
-- aoning.wang
-- point.pea3nut.org
-- momo.nutjs.com
-
-别忘了一一测试哦~
