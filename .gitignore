@@ -6,3 +6,8 @@ points-data/
 test/
 *.tar.gz
 secret.env
+docker.stderr.log
+docker.stdout.log
+temp/
+blog-data.sql
+install-docker.sh

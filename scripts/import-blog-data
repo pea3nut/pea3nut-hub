@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+SQL_FILE="blog-data.sql"
+CONTAINER_NAME="pea3nut-blog"
+
+if [ ! -f "$SQL_FILE" ]; then
+    echo "错误：SQL文件 '$SQL_FILE' 不存在。"
+    exit 1
+fi
+
+# 将SQL文件复制到容器中
+echo "正在将SQL文件复制到容器 '$CONTAINER_NAME'..."
+docker cp "$SQL_FILE" "$CONTAINER_NAME:/tmp/"
+
+# 执行MySQL导入命令
+echo "正在导入数据库..."
+docker exec "$CONTAINER_NAME" bash -c "mysql -u root < /tmp/$SQL_FILE"
+
+echo "数据库导入完成。"
+
