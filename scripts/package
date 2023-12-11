@@ -11,19 +11,24 @@ then
     nvm use --lts
 fi
 
+if ! command -v ws &> /dev/null
+then
+    npm i -g local-web-server
+fi
 
 password=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 username=pea3nut
 filename=pea3nut-hub-patch.tar.gz
 port=8991
 
-npm i -g local-web-server
+docker exec pea3nut-blog mysqldump -u root -p --all-databases > blog-data.sql
 
 set +e
 tar -czvf pea3nut-hub-patch.tar.gz \
-    blog/mysql-data \
+    blog-data.sql \
     blog/wordpress/ \
     points-data/ \
+    secret.env \
     /etc/letsencrypt \
 ;
 exit_code=$?
