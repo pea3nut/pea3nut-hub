@@ -8,9 +8,8 @@ mv $1 temp/
 cd temp/
 
 tar -xzvf $1
-cp -r etc/letsencrypt /etc/letsencrypt
+mv etc/letsencrypt /etc/letsencrypt
+mv secret.env ../
+mv blog/wordpress/* ../blog/wordpress/
 
 systemctl restart nginx
-
-cd ../
-rm -rf temp/
