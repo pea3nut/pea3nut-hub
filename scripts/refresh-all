@@ -10,6 +10,4 @@ docker-compose pull
 docker-compose up -d
 systemctl restart nginx
 
-if [ "$1" = "gpt" ]; then
-    $DIR/set-gpt-key
-fi
+$DIR/set-gpt-key
