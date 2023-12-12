@@ -67,3 +67,21 @@ crontab -e
 ```
 0 0 1 * * /root/_pea3nut/pea3nut-hub/scripts/backup
 ```
+
+### 增加虚拟内存
+
+可以通过下面命令检查是否已经有虚拟内存了，如果有了，那可以跳过此节
+
+```bash
+free -h
+```
+
+如果没有 swap 分区，可以通过如下命令创建一个。一般建议大小设置为物理内存的 2 倍：
+
+```bash
+fallocate -l 2G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
+```
