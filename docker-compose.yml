@@ -26,14 +26,30 @@ services:
         ports:
             - "8083:80"
         restart: on-failure
-    aoning:
-        container_name: aoning-wang
-        build:
-            context: ./aoning-wang
-            dockerfile: Dockerfile
+    aoning_wordpress:
+        image: wordpress:latest
+        restart: always
         ports:
             - "8085:80"
-        restart: on-failure
+        environment:
+            WORDPRESS_DB_HOST: aoning_db
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress123
+            WORDPRESS_DB_NAME: wordpress_data
+        volumes:
+            - ./aoning-wang/wordpress:/var/www/html
+
+    aoning_db:
+        image: mysql:8.0
+        restart: always
+        container_name: aoning_db
+        environment:
+            MYSQL_DATABASE: wordpress_data
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress123
+            MYSQL_ALLOW_EMPTY_PASSWORD: '1'
+        volumes:
+            - ./aoning-wang/mysql-data:/var/lib/mysql
     pxer:
         container_name: pxer
         image: pea3nut/pxer:master

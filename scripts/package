@@ -22,11 +22,14 @@ filename=pea3nut-hub-patch.tar.gz
 port=8991
 
 docker exec pea3nut-blog mysqldump -u root -p --all-databases > blog-data.sql
+docker exec aoning_db mysqldump -u root -p --all-databases > aoning-data.sql
 
 set +e
 tar -czvf pea3nut-hub-patch.tar.gz \
     blog-data.sql \
     blog/wordpress/ \
+    aoning-data.sql \
+    aoning-wang/wordpress/ \
     points-data/ \
     secret.env \
     /etc/letsencrypt \

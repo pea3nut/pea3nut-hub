@@ -25,6 +25,7 @@ snap install --classic certbot
 # others
 
 ln -s "${root_path}/vhost.conf" /etc/nginx/conf.d/vhost.conf
+ln -s "${root_path}/reverse_proxy.conf" /etc/nginx/conf.d/reverse_proxy.conf
 cp "${root_path}/gpt/htpasswd.txt" /etc/nginx/conf.d/htpasswd.txt
 
 # start when power on

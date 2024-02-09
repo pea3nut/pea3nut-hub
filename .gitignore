@@ -1,5 +1,7 @@
 blog/mysql-data
 blog/wordpress
+aoning-wang/mysql-data
+aoning-wang/wordpress
 pxer/logs/*
 pxer/ssl/*
 points-data/
@@ -10,4 +12,5 @@ docker.stderr.log
 docker.stdout.log
 temp/
 blog-data.sql
+aoning-data.sql
 install-docker.sh
