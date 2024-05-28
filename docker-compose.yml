@@ -83,3 +83,16 @@ services:
         ports:
             - "8091:3000"
         restart: on-failure
+    gpt-2:
+        container_name: gpt-2
+        image: yidadaa/chatgpt-next-web
+        ports:
+            - "8092:3000"
+        restart: on-failure
+        environment:
+            MYSQL_DATABASE: wordpress_data
+            OPENAI_API_KEY: ${OPENAI_API_KEY}
+            CODE: huasheng
+            ENABLE_BALANCE_QUERY: 1
+            HIDE_USER_API_KEY: 1
+            DEFAULT_MODEL: 'gpt-4o'

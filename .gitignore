@@ -14,3 +14,4 @@ temp/
 blog-data.sql
 aoning-data.sql
 install-docker.sh
+.env
