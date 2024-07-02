@@ -92,7 +92,8 @@ services:
         environment:
             MYSQL_DATABASE: wordpress_data
             OPENAI_API_KEY: ${OPENAI_API_KEY}
-            CODE: huasheng
+            CODE: ${GPT_2_PASSWORD}
             ENABLE_BALANCE_QUERY: 1
             HIDE_USER_API_KEY: 1
             DEFAULT_MODEL: 'gpt-4o'
+            BASE_URL: 'https://openai-api.shab.fun'
