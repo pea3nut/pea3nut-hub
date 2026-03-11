@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
             args:
                 db_name: "pea"
-                root_url: "http://127.0.0.1:8081"
+                root_url: "https://pea3nut.blog"
         ports:
             - "8081:80"
         volumes:
@@ -28,7 +28,7 @@ services:
         restart: on-failure
     aoning_wordpress:
         image: wordpress:latest
-        restart: always
+        restart: unless-stopped
         ports:
             - "8085:80"
         environment:
@@ -41,7 +41,10 @@ services:
 
     aoning_db:
         image: mysql:8.0
-        restart: always
+        restart: on-failure:5
+        init: true
+        command:
+            - --innodb-buffer-pool-size=128M
         container_name: aoning_db
         environment:
             MYSQL_DATABASE: wordpress_data
