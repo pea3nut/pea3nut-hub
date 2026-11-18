@@ -1,9 +1,0 @@
-# Source address                  Destination address(es)
-# Copy this file to mail/config/forwards and replace the destination before starting.
-me@pea3nut.org                    your-name@gmail.com
-
-# Multiple recipients (comma separated):
-# hello@pea3nut.org               your-name@gmail.com,your-name@qq.com
-
-# Optional catch-all; explicit addresses take precedence:
-# @pea3nut.org                    your-name@gmail.com

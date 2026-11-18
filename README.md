@@ -4,9 +4,7 @@
 
 ## 域名邮件转发
 
-通过独立 Docker Compose 服务接收 `me@pea3nut.org` 等地址的邮件，并按映射表转发至 Gmail、QQ 等邮箱。配置、部署与 GoDaddy DNS 设置见 [邮件转发指南](mail/README.md)。
-
-邮件服务使用独立的 `pea3nut-mail` 项目，不会被网站的 `scripts/refresh-all` 停止。
+`docker-compose.yml` 中的 `mail-forwarder` 使用 Docker Mailserver 官方镜像接收 `me@pea3nut.org` 等地址的邮件，按配置文件转发至 Gmail、QQ 等邮箱，无需构建或维护邮件程序。配置、部署与 GoDaddy DNS 设置见 [邮件转发指南](mail/README.md)。
 
 ## 首次部署
 

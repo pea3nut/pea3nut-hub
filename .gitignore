@@ -16,9 +16,11 @@ aoning-data.sql
 install-docker.sh
 .env
 
-# Private forwarding addresses, queued mail, and persistent SRS signing secret.
-mail/mail.env
-mail/config/
-mail/queue/
+# Private forwarding addresses and generated image configuration.
+mail/config/*
+!mail/config/postfix-main.cf
+!mail/config/postfix-virtual.cf.example
+# Postfix queue, SRS signing secret and logs are managed by Docker Mailserver.
 mail/state/
+mail/logs/
 __pycache__/

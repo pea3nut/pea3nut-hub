@@ -100,3 +100,39 @@ services:
             HIDE_USER_API_KEY: 1
             DEFAULT_MODEL: 'gpt-4o'
             BASE_URL: 'https://openai-api.shab.fun'
+    mail-forwarder:
+        container_name: pea3nut-mail
+        image: mailserver/docker-mailserver:17.0.0
+        hostname: mail.pea3nut.org
+        ports:
+            - "25:25"
+        environment:
+            SMTP_ONLY: '1'
+            ENABLE_SRS: '1'
+            SRS_DOMAINNAME: srs.pea3nut.org
+            SRS_SENDER_CLASSES: envelope_sender
+            PERMIT_DOCKER: none
+            POSTFIX_INET_PROTOCOLS: ipv4
+            POSTMASTER_ADDRESS: postmaster@pea3nut.org
+            SSL_TYPE: letsencrypt
+            ENABLE_AMAVIS: '0'
+            ENABLE_CLAMAV: '0'
+            ENABLE_SPAMASSASSIN: '0'
+            ENABLE_OPENDKIM: '0'
+            ENABLE_OPENDMARC: '0'
+            ENABLE_POLICYD_SPF: '0'
+            ENABLE_RSPAMD: '0'
+            ENABLE_FAIL2BAN: '0'
+            ENABLE_DNSBL: '0'
+        volumes:
+            - ./mail/config:/tmp/docker-mailserver
+            - ./mail/state:/var/mail-state
+            - ./mail/logs:/var/log/mail
+            - /etc/letsencrypt:/etc/letsencrypt:ro
+        restart: unless-stopped
+        stop_grace_period: 1m
+        logging:
+            driver: json-file
+            options:
+                max-size: "10m"
+                max-file: "3"

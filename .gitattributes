@@ -1,3 +1,1 @@
-scripts/mail text eol=lf
-docker-compose.mail.yml text eol=lf
 mail/** text eol=lf
