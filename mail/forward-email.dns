@@ -1,0 +1,19 @@
+; Forward Email hosted forwarding for pea3nut.org (free plan).
+; Review/reference fragment, not a complete zone file. Copy records individually
+; into GoDaddy; retain the existing nameservers and all website DNS records.
+; Do not publish alongside the old root MX pointing to mail.pea3nut.org.
+$ORIGIN pea3nut.org.
+$TTL 1800
+
+@ IN MX 0 mx1.forwardemail.net.
+@ IN MX 0 mx2.forwardemail.net.
+
+; Catch-all: every local part at pea3nut.org forwards to this Gmail inbox.
+; Reviewable plaintext. At cutover, replace this entire TXT value with the
+; equivalent encrypted value from https://forwardemail.net/en/encrypt .
+; Publish one forwarding rule, not both the plaintext and encrypted versions.
+@ IN TXT "forward-email=qq626954412@gmail.com"
+
+; If root SPF already exists, merge include:spf.forwardemail.net into it.
+; Never add a second v=spf1 record. Preserve other authorized senders.
+@ IN TXT "v=spf1 a include:spf.forwardemail.net -all"

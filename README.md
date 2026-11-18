@@ -4,7 +4,9 @@
 
 ## 域名邮件转发
 
-`docker-compose.yml` 中的 `mail-forwarder` 使用 Docker Mailserver 官方镜像接收 `me@pea3nut.org` 等地址的邮件，按配置文件转发至 Gmail、QQ 等邮箱，无需构建或维护邮件程序。配置、部署与 GoDaddy DNS 设置见 [邮件转发指南](mail/README.md)。
+使用 Forward Email 的免费托管转发，将 `*@pea3nut.org` 的全部来信转到 `qq626954412@gmail.com`。邮件由服务商接收和投递，无需在本服务器运行邮件容器。GoDaddy 的 DNS 记录见 [转发配置](mail/forward-email.dns)，接入、旧服务迁移和验证步骤见 [邮件转发指南](mail/README.md)。
+
+已有自建邮件服务的生产环境，先按迁移指南切换 DNS、处理旧队列并停用旧容器，再拉取本次改动；旧容器挂载的配置文件会在本次更新中移除。
 
 ## 首次部署
 

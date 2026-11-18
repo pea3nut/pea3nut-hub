@@ -16,12 +16,9 @@ aoning-data.sql
 install-docker.sh
 .env
 
-# Keep the forwarding rules and Postfix overrides; ignore generated DMS files.
-mail/config/*
-!mail/config/postfix-main.cf
-!mail/config/postfix-virtual.cf
-!mail/config/postfix-virtual.cf.example
-# Postfix queue, SRS signing secret and logs are managed by Docker Mailserver.
+# Preserve retired Docker Mailserver data locally during the hosted migration.
+# Active forwarding configuration is now in mail/forward-email.dns.
+mail/config/
 mail/state/
 mail/logs/
 __pycache__/
