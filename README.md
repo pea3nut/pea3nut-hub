@@ -2,6 +2,10 @@
 
 花生Peadar 的全部线上站点！
 
+## 域名邮件转发
+
+`docker-compose.yml` 中的 `mail-forwarder` 使用 Docker Mailserver 官方镜像接收 `me@pea3nut.org` 等地址的邮件，按配置文件转发至 Gmail、QQ 等邮箱，无需构建或维护邮件程序。配置、部署与 GoDaddy DNS 设置见 [邮件转发指南](mail/README.md)。
+
 ## 首次部署
 
 确保你在`/root/_pea3nut/pea3nut-hub/`文件夹下，使用 Ubuntu 系统
