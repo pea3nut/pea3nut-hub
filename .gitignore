@@ -16,9 +16,10 @@ aoning-data.sql
 install-docker.sh
 .env
 
-# Private forwarding addresses and generated image configuration.
+# Keep the forwarding rules and Postfix overrides; ignore generated DMS files.
 mail/config/*
 !mail/config/postfix-main.cf
+!mail/config/postfix-virtual.cf
 !mail/config/postfix-virtual.cf.example
 # Postfix queue, SRS signing secret and logs are managed by Docker Mailserver.
 mail/state/

@@ -23,27 +23,15 @@ dig +short -x YOUR_SERVER_IPV4
 
 第二条命令中的 `YOUR_SERVER_IPV4` 替换为真实 IP。先保留原有 MX，等证书和服务就绪后再切换。
 
-## 2. 填写真实转发地址
+## 2. 转发地址
 
-```bash
-cd /root/_pea3nut/pea3nut-hub
-cp mail/config/postfix-virtual.cf.example mail/config/postfix-virtual.cf
-```
-
-编辑 `mail/config/postfix-virtual.cf`，取消需要的规则前面的 `#`，将目标改成自己实际控制的邮箱，例如：
+`mail/config/postfix-virtual.cf` 已配置并随仓库部署，所有 `@pea3nut.org` 的来信都转发到指定的 QQ 邮箱，无需复制示例文件：
 
 ```text
-me@pea3nut.org YOUR_REAL_ADDRESS@gmail.com
-hello@pea3nut.org YOUR_REAL_ADDRESS@qq.com
+@pea3nut.org qq626954412@qq.com
 ```
 
-若希望整个域名的任意地址都转给同一个邮箱，可改用 catch-all：
-
-```text
-@pea3nut.org YOUR_REAL_ADDRESS@gmail.com
-```
-
-务必替换示例地址；目标不要再转回 `pea3nut.org`，以免产生循环。catch-all 也会收下拼错的地址和更多垃圾邮件。通用 Postfix 设置已放在 `mail/config/postfix-main.cf`，通常不需要修改。
+这里 `@pea3nut.org` 是 Postfix 的 catch-all 写法，包含 `me@pea3nut.org`、`hello@pea3nut.org` 等任意地址。之后要修改目标，直接编辑该配置文件；目标不要再转回 `pea3nut.org`，以免产生循环。catch-all 也会收下拼错的地址和更多垃圾邮件。通用 Postfix 设置已放在 `mail/config/postfix-main.cf`，通常不需要修改。
 
 ## 3. 申请邮件证书并启动
 
