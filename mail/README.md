@@ -25,10 +25,10 @@ dig +short -x YOUR_SERVER_IPV4
 
 ## 2. 转发地址
 
-`mail/config/postfix-virtual.cf` 已配置并随仓库部署，所有 `@pea3nut.org` 的来信都转发到指定的 QQ 邮箱，无需复制示例文件：
+`mail/config/postfix-virtual.cf` 已配置并随仓库部署，所有 `@pea3nut.org` 的来信都转发到指定的 Gmail 邮箱，无需复制示例文件：
 
 ```text
-@pea3nut.org qq626954412@qq.com
+@pea3nut.org qq626954412@gmail.com
 ```
 
 这里 `@pea3nut.org` 是 Postfix 的 catch-all 写法，包含 `me@pea3nut.org`、`hello@pea3nut.org` 等任意地址。之后要修改目标，直接编辑该配置文件；目标不要再转回 `pea3nut.org`，以免产生循环。catch-all 也会收下拼错的地址和更多垃圾邮件。通用 Postfix 设置已放在 `mail/config/postfix-main.cf`，通常不需要修改。
