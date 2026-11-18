@@ -15,3 +15,10 @@ blog-data.sql
 aoning-data.sql
 install-docker.sh
 .env
+
+# Private forwarding addresses, queued mail, and persistent SRS signing secret.
+mail/mail.env
+mail/config/
+mail/queue/
+mail/state/
+__pycache__/

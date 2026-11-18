@@ -1,0 +1,6 @@
+# Runtime addresses, queued messages, secrets and certificate material must never
+# become image layers, including when developers build with a populated mail/.
+**
+!Dockerfile
+!configure.py
+!runtime.py
